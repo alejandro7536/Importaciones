@@ -16,15 +16,16 @@
 {% block contenido %}
 <section id="secf">
     {% load staticfiles %}
-    <form action="" id="formulario">
+    <form action="" id="formulario" method="POST">
+        {%csrf_token%}
         <img src="{% static "images/open-lock-1.png" %}" id="img1">
         <!--<img src="static/images/open-lock-1.png" id="img1">-->
 
         <span id="n2">Iniciar Sesion</span>
 
-        <input class="inputlog" type="text" name="Id" placeholder="Usuario" required>
+        <input class="inputlog" type="text" name="username" placeholder="Usuario" required>
         <input class="inputlog" type="password" name="pasword" placeholder="Pasword" required>
-        <a href="admin.html"><input class="inputlog" type="submit" value="Ingresar"id="boton1"></a>
+        <a><input class="inputlog" type="submit" value="Ingresar"id="boton1"></a>
     </form>
 
 </section>

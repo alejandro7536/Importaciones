@@ -1,5 +1,4 @@
     {% load staticfiles %}
-
 <!DOCTYPE html>
 <html  lang="es">
 <head>
@@ -13,12 +12,21 @@
 <header>
     <section id="cabecera">
         <span id="titulo">Import</span>
+
+        {%if user.is_authenticated%}
+        {%block descripcion1%}
+         <div id="descripcion">
+            <span> Bienvenido a Import.  Te has registrado como administrador, aqui podras editar la informacion de las importaciones, como consultarlas.</span>
+            </div>
+        {% endblock %}
+        {%else%}
+
         {%block descripcion%}
         <div id="descripcion">
             <span> Bienvenido a Inport. Aqui encontararas informcion relacionada con las importaciones en El Salvador. Representadas de forma grafica, clara y veraz</span>
         </div>
         {% endblock %}
-
+        {%endif%}
     </section>
     {% block menu %}
     {% include 'menu_usuario.html' %}

@@ -86,16 +86,19 @@ header nav{
     font-family: segoe;
     font-size: 40px ;
      padding-top:5px;
-    padding-bottom: 5px;
     padding-left: 60px;
     padding-right: 60px;    
 }
-#listaF{
+select{
     font-family: segoe;
     font-size: 20px;
     width: 100%;
     padding: 7px;
     box-sizing: border-box;
+    padding-left: 60px;
+    padding-right: 60px;
+    background-color: white;
+    border-style: solid;
 
 }
 #sec1{

@@ -1,4 +1,5 @@
 {% extends 'Index.html' %}
+{% load staticfiles %}
 {%block descripcion%}
 <div id="descripcion">
     <span> Bienvenido a Import. Inicia sesion para acceder a otras opciones</span>
@@ -13,21 +14,27 @@
     </ul>
 </nav>
 {% endblock %}
+
 {% block contenido %}
+
 <section id="secf">
-    {% load staticfiles %}
+    {%if user.is_authenticated%}
+    <p id="intro" >Inicio de secion exitoso para administardor: {{user.username|capfirst}}</p>
+    <p id="intro" >Preciona el boton inicio para ir al contenido</p>
+
+{%else%}
+
     <form action="" id="formulario" method="POST">
-        {%csrf_token%}
+        {% csrf_token %}
         <img src="{% static "images/open-lock-1.png" %}" id="img1">
-        <!--<img src="static/images/open-lock-1.png" id="img1">-->
 
         <span id="n2">Iniciar Sesion</span>
 
         <input class="inputlog" type="text" name="username" placeholder="Usuario" required>
-        <input class="inputlog" type="password" name="pasword" placeholder="Pasword" required>
+        <input class="inputlog" type="password" name="password" placeholder="Pasword" required>
         <a><input class="inputlog" type="submit" value="Ingresar"id="boton1"></a>
     </form>
-
+{%endif%}
 </section>
 
 {% endblock %}

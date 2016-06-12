@@ -30,4 +30,8 @@ urlpatterns = [
     url(r'^cerrar/', 'django.contrib.auth.views.logout_then_login',name='logout'),
 
     url(r'^data/', views.gestion),
+
+    url(r'^ingresar/', views.ingresar),
+
+
 ]

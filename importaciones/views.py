@@ -4,7 +4,7 @@ from django.shortcuts import render
 def inicio(request):
     return render(request, 'Index.html')
 
-def login(request):
+def ingresar(request):
     return render(request, 'login.html')
 
 def gestion(request):

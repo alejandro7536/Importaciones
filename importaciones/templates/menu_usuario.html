@@ -5,8 +5,9 @@
                 {%if user.is_authenticated%}
 
                 <a href="data"><li>Gestionar datos </li> </a>
+                <a href="admin"><li>Administrar </li> </a>
                 <a href="cerrar"><li>Serrar sesion </li> </a>
-                <a href="admin"><li> Bienvenido {{user.username|capfirst}} </li> </a>
+
 
                 {%else%}
                  <a href="login"><li>Iniciar sesion </li> </a>

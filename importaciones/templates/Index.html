@@ -16,7 +16,7 @@
         {%if user.is_authenticated%}
         {%block descripcion1%}
          <div id="descripcion">
-            <span> Bienvenido a Import.  Te has registrado como administrador, aqui podras editar la informacion de las importaciones, como consultarlas.</span>
+            <span>  {{user.username|capfirst}} Bienvenido a Import.  Te has registrado como administrador, aqui podras editar la informacion de las importaciones, como consultarlas.</span>
             </div>
         {% endblock %}
         {%else%}

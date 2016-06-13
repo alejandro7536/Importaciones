@@ -17,7 +17,7 @@ Including another URLconf
 from django.conf.urls import patterns, include, url
 from django.contrib import admin
 from importaciones import views
-
+from django.core.urlresolvers import  reverse_lazy
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),

@@ -1,0 +1,45 @@
+{% extends 'Index.html' %}
+{% load staticfiles %}
+{%block descripcion%}
+            <div id="descripcion">
+            <span> Bienvenido a Import. Aqui podras añadir y gestionar informacion relacionada con las importaciones</span>
+            </div>
+        {%endblock%}
+            
+
+       {%block menu%}
+        <nav >
+            <ul>
+                <a href="admin.html"> <li>Inicio</li></a>
+                <a href="/"> <li>Cerrar sesion</li></a>
+                
+                
+            </ul>
+        </nav>
+        {%endblock%}
+        {%block contenido%}
+
+        <section>
+
+			<div id="buttons">
+				<div class="button" id="add_btn" >
+
+					<img src="{% static "images/file.png" %}" class="icon">
+					<p class="texto">Añadir csv</p>
+				</div>
+
+				<div class="button" id="gestion_btn">
+
+					<img src="{% static "images/loupe.png"%}" class="icon">
+					<p class="texto">Gestion</p>
+				</div>
+                <div class="button" id="add2_btn" >
+
+					<img src="{% static "images/edit.png" %}" class="icon">
+					<p class="texto">Añadir</p>
+				</div>
+			</div>
+		</section>
+        {%endblock%}
+
+

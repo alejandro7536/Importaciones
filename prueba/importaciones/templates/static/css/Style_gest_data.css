@@ -1,0 +1,159 @@
+body{
+    margin: 0;
+    padding: 0;
+    }
+@font-face {
+    font-family: 'segoe';
+    src: url('../fonts/segoeuil_0.ttf');
+}
+
+#cabecera{
+   
+    height: 270px;
+    background-image: url( ../images/98469374-1024x194.jpg);
+    display: block;  
+    background-repeat: no-repeat;
+    background-size: cover;
+    
+ 
+}
+#titulo{
+    color: white;
+    font-size: 60px ;
+    padding: 30px;
+    font-family: segoe;
+    margin-left: 5%;
+    
+}
+#descripcion{
+    margin-top: 10px;
+    height: 50% ;
+    width: 50%;
+    margin-left: 5%;
+    background-color:rgba(0,0,0,0.5);
+    padding: 10px;
+   
+    font-family: segoe;
+    font-size: 20px;
+    text-align: justify;
+    border-radius: 5px;
+    color:white;
+    -moz-transition: all 1s ease;
+    -webkit-transition: all 1s ease;
+}
+#descripcion:hover{
+    width:70%;
+    opacity: 0.8;
+    -moz-transition: all 1s ease;
+    -webkit-transition: all 1s ease;
+    font-size: 25px;
+}
+header nav{
+    margin-top: 0; 
+    height: 65px;
+    background-color: #3498db;
+    font-family: segoe;
+    margin-bottom: 10px;
+    
+}
+    header nav ul{
+        list-style: none;
+        overflow: hidden;
+    } 
+        header nav ul li {
+            float: left;
+            display: block;
+            padding: 20px;
+            color: white;
+            text-decoration: none;    
+            }   
+        header nav ul li:hover {
+            background: #2980b9;
+            cursor:pointer;
+    
+            }
+
+@media screen and (max-width: 480px) {
+	#titulo {
+		font-size: 50px;
+	}
+
+	#parrafo {
+		font-size: 22px;
+	}
+}
+
+#buttons {
+	display: block;
+    padding: 5%;
+   
+    
+}
+
+.button {
+	display: inline-block;
+	position:relative;
+   
+	min-width: 175px;
+	min-height: 250px;
+
+	background-color: #2980b9;
+    
+    transition: all 0.5s ease;
+	 -moz-transition: all 0.5s ease;
+    -webkit-transition: all 0.5s ease;
+}
+
+.button:hover {
+	cursor: pointer;
+	
+	border-bottom: 20px solid rgba(253, 11, 132, 0.61);
+    background-color:#032b6c;
+    transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -webkit-transition: all 0.5s ease;
+    
+}
+
+.button:active {
+	background-color: #000000;
+}
+
+/**********************************************************************************************/
+.texto{
+font-family:segoe;
+	color:white;
+	font-size:25px;
+	text-align:center;
+	padding-top:80px;
+	opacity:0.6;
+}
+.icon{
+    display: block;
+	margin:10px auto;
+	width:40px;
+
+	background-color:rgba(255,255,255,0.15);
+	vertical-align: middle;
+	
+	padding:20px;
+	border-radius: 100px;
+}
+
+
+
+footer {
+    
+font-family: segoe;
+margin-top: 100px;
+clear: both;
+text-align: center;
+padding: 20px;
+border-top: 5px solid #2980b9;
+background: #3498db;
+color: white;
+height: 100px;
+margin-bottom: auto;
+    
+}
+

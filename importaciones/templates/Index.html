@@ -3,15 +3,12 @@
 <html  lang="es">
 {% load staticfiles %}
 <head>
-        <meta charset="UTF-8">
+    <title> Import </title>
+    <meta charset="UTF-8">
+    <script src="/static/js/chart.js"></script>
+    <link rel="stylesheet" href="/static/css/Style_public.css">
 
-        <link rel="stylesheet" href="{% static "css/Style_public.css" %}">
-        <script src="{% static "js/chart.js" %}" >
-    <script></script>
-
-        <title> Import </title>
-
-    </head>
+</head>
 
 <body>
 <header>
@@ -21,7 +18,7 @@
         {%if user.is_authenticated%}
         {%block descripcion1%}
          <div id="descripcion">
-            <span>  {{user.username|capfirst}} Bienvenido a Import.  Te has registrado como administrador, aqui podras editar la informacion de las importaciones, como consultarlas.</span>
+            <span>  {{user.username|capfirst}} bienvenido a Import.  Te has registrado como administrador, aqui podras editar la informacion de las importaciones, como consultarlas.</span>
             </div>
         {% endblock %}
         {%else%}
@@ -66,8 +63,9 @@
         <option value=12>Noviembre-Diciembre-2015</option>
 </select>
 
-<section id="sec1">
-    <h1 id="intro">Categoria 1</h1>
+<section>
+    <h1>Categoria 1</h1>
+
     <canvas id="containerGrafico" width="400" height="400"></canvas>
             <script>
                 var ctx = document.getElementById("containerGrafico");

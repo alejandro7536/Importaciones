@@ -31,7 +31,5 @@ urlpatterns = [
 
     url(r'^data/', views.gestion),
 
-    url(r'^ingresar/', views.ingresar),
-
 
 ]

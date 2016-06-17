@@ -31,5 +31,7 @@ urlpatterns = [
 
     url(r'^data/', views.gestion),
 
+    url(r'^archivocsv/', views.archivocsv),
+
 
 ]

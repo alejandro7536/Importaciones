@@ -1,6 +1,7 @@
 from __future__ import unicode_literals
 from django.utils import timezone
 from django.db import models
+from django.core.urlresolvers import reverse
 
 # Create your models here.
 class Categoria(models.Model):
@@ -41,6 +42,8 @@ class Estadistica(models.Model):
 	cantidad = models.DecimalField(max_digits = 30, decimal_places = 2)
 	mes = models.CharField(max_length = 2, choices = MES_CHOICES, default = "01")
 	anho = models.CharField(max_length = 4)
+	def get_absolute_url(self):
+		return reverse('registro-view', kwargs = {'pk':self.id})
 	def __unicode__(self):
 		return self.producto.nombre_producto
 

@@ -20,6 +20,8 @@ from importaciones import views
 from django.core.urlresolvers import  reverse_lazy
 from importaciones.views import ListRegistroView
 from importaciones.views import CreateRegistroView
+from importaciones.views import DetailRegistro
+from importaciones.views import DeleteRegistro
 
 # Este es el urls en el que debo trabajar.
 
@@ -36,6 +38,9 @@ urlpatterns = [
     url(r'^data/', views.gestion),
 
     url(r'^archivocsv/$', views.archivocsv, name = "archivocsv"),
-    url(r'^registro/$', ListRegistroView.as_view(), name = "registro-list"),
-    url(r'^newregistro/$', CreateRegistroView.as_view(), name = "registro-new"),
+    url(r'^registro/$', ListRegistroView.as_view(), name = "registro-list",),
+    url(r'^newregistro/$', CreateRegistroView.as_view(), name = "registro-new",),
+    url(r'^(?P<pk>\d+)/$', DetailRegistro.as_view(), name = 'registro-view',),
+    url(r'^delete/(?P<pk>\d+)/$', DeleteRegistro.as_view(), name = 'registro-delete',),
+
 ]

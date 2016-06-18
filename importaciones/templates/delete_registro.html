@@ -1,0 +1,41 @@
+{% extends 'Index.html' %}
+{% load staticfiles %}
+{%block descripcion1%}
+            <div id="descripcion">
+            <span> Bienvenido a Import. Aqui podras añadir y gestionar informacion relacionada con las importaciones</span>
+            </div>
+        {%endblock%}
+            
+
+       {%block menu%}
+        <nav >
+            <ul>
+                <a href="/"> <li>Inicio</li></a>
+            </ul>
+        </nav>
+        {%endblock%}
+        
+        {%block contenido%}
+
+        <h3>Eliminar Registro</h3>
+        <hr/>
+        <p>Esta seguro que desea eliminar el registro {{ registro }}</p>
+            <dl class = "dl-horizontal">
+                <dt>Producto: </dt>
+                <dd>{{ registro.producto }}</dd>
+                <dt>Valor: </dt>
+                <dd>{{ registro.valor }}</dd>
+                <dt>Cantidad: </dt>
+                <dd>{{ registro.cantidad }}</dd>
+                <dt>Mes: </dt>
+                <dd>{{ registro.mes }}</dd>
+                <dt>Anho: </dt>
+                <dd>{{ registro.anho }}</dd>
+            </dl>
+        <form action="{% 'registro-delete' pk=registro.id %}" method="POST">
+        {% csrf_token %}
+        <input type = "submit" class = "btn btn-default" value = "Si, eliminar."/>
+        <a href = "{% url 'registro-list' %}" class = "btn btn-default">No, cancelar.</a>
+        </form>
+
+        {%endblock%}

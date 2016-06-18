@@ -29,6 +29,7 @@
                     <th>Cantidad</th>
                     <th>Mes</th>
                     <th>Anho</th>
+                    <th></th>
                 </tr>
                 {% for registro in object_list %}
                     <tr>
@@ -37,6 +38,8 @@
                         <td>{{ registro.cantidad }}</td>
                         <td>{{ registro.mes }}</td>
                         <td>{{ registro.anho }}</td>
+                        <td><a href = "{{ estadistica.get_absolute_url }}"><button>Detalle</button></a>
+                        <a href = "{% url 'registro-delete' pk=registro.id %}"><button>Eliminar</button></a></td>
                     </tr>
                 {% endfor %}
             </table>

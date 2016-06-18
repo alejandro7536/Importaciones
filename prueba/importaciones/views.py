@@ -5,6 +5,7 @@ from django.views.generic import CreateView
 from django.core.urlresolvers import reverse
 from importaciones.forms import RegistroForm
 from django.views.generic import DetailView
+from django.views.generic import DeleteView
 
 # Create your views here.
 # Este es el views en el que debo trabajar.
@@ -31,3 +32,13 @@ class CreateRegistroView(CreateView):
 	form_class = RegistroForm
 	def get_success_url(self):
 		return reverse('registro-list')
+
+class DetailRegistro(DetailView):
+	model = Estadistica
+	template_name = "detalle_registro.html"
+
+class DeleteRegistro(DetailView):
+	model = Estadistica
+	template_name = 'delete_registro.html'
+	def get_success_url(self):
+		return reverse('articulo-list')

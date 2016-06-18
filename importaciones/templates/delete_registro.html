@@ -19,20 +19,20 @@
 
         <h3>Eliminar Registro</h3>
         <hr/>
-        <p>Esta seguro que desea eliminar el registro {{ registro }}</p>
+        <p>Esta seguro que desea eliminar el registro {{ estadistica }}</p>
             <dl class = "dl-horizontal">
                 <dt>Producto: </dt>
-                <dd>{{ registro.producto }}</dd>
+                <dd>{{ estadistica.producto }}</dd>
                 <dt>Valor: </dt>
-                <dd>{{ registro.valor }}</dd>
+                <dd>{{ estadistica.valor }}</dd>
                 <dt>Cantidad: </dt>
-                <dd>{{ registro.cantidad }}</dd>
+                <dd>{{ estadistica.cantidad }}</dd>
                 <dt>Mes: </dt>
-                <dd>{{ registro.mes }}</dd>
+                <dd>{{ estadistica.mes }}</dd>
                 <dt>Anho: </dt>
-                <dd>{{ registro.anho }}</dd>
+                <dd>{{ estadistica.anho }}</dd>
             </dl>
-        <form action="{% 'registro-delete' pk=registro.id %}" method="POST">
+        <form action="{% url 'registro-delete' pk=estadistica.id %}" method="POST">
         {% csrf_token %}
         <input type = "submit" class = "btn btn-default" value = "Si, eliminar."/>
         <a href = "{% url 'registro-list' %}" class = "btn btn-default">No, cancelar.</a>

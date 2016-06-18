@@ -39,7 +39,9 @@
                         <td>{{ registro.mes }}</td>
                         <td>{{ registro.anho }}</td>
                         <td><a href = "{% url 'registro-view' pk=registro.id %}"><button>Detalle</button></a>
-                        <a href = "{% url 'registro-delete' pk=registro.id %}"><button>Eliminar</button></a></td>
+                        <a href = "{% url 'registro-delete' pk=registro.id %}"><button>Eliminar</button></a>
+                        <a href = "{% url 'registro-edit' pk=registro.id %}"><button>Editar</button></a>
+                        </td>
                     </tr>
                 {% endfor %}
             </table>

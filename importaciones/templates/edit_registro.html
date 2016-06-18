@@ -17,9 +17,14 @@
         
         {%block contenido%}
 
-        <h3>Nuevo Registro</h3>
+        {% if registro.id %}
+        <h3>Editar registro</h3>
+        {% else %}
+        <h3>Nuevo registro</h3>
+        {% endif %}
+
         <hr/>
-        <form action = "{% url 'registro-new' %}" class = "form-horizontal" method = "post">
+        <form action = "{{ action }}" class = "form-horizontal" method = "post">
 
             {% csrf_token %}
 

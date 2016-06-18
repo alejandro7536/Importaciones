@@ -22,6 +22,7 @@ from importaciones.views import ListRegistroView
 from importaciones.views import CreateRegistroView
 from importaciones.views import DetailRegistro
 from importaciones.views import DeleteRegistro
+from importaciones.views import UpdateRegistroView
 
 # Este es el urls en el que debo trabajar.
 
@@ -42,5 +43,6 @@ urlpatterns = [
     url(r'^newregistro/$', CreateRegistroView.as_view(), name = "registro-new",),
     url(r'^registro/(?P<pk>\d+)/$', DetailRegistro.as_view(), name = 'registro-view',),
     url(r'^delete/(?P<pk>\d+)/$', DeleteRegistro.as_view(), name = 'registro-delete',),
+    url(r'^update/(?P<pk>\d+)/$', UpdateRegistroView.as_view(), name = 'registro-edit',),
 
 ]

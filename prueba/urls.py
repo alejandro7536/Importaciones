@@ -40,7 +40,7 @@ urlpatterns = [
     url(r'^archivocsv/$', views.archivocsv, name = "archivocsv"),
     url(r'^registro/$', ListRegistroView.as_view(), name = "registro-list",),
     url(r'^newregistro/$', CreateRegistroView.as_view(), name = "registro-new",),
-    url(r'^(?P<pk>\d+)/$', DetailRegistro.as_view(), name = 'registro-view',),
+    url(r'^registro/(?P<pk>\d+)/$', DetailRegistro.as_view(), name = 'registro-view',),
     url(r'^delete/(?P<pk>\d+)/$', DeleteRegistro.as_view(), name = 'registro-delete',),
 
 ]

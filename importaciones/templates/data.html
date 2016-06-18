@@ -22,22 +22,22 @@
         <section>
 
 			<div id="buttons">
-				<div class="button" id="add_btn" >
-
+				
+                
+                <a href="{% url 'archivocsv' %}"><div class="button" id="add_btn">
 					<img src="{% static "images/file.png" %}" class="icon">
 					<p class="texto">Añadir csv</p>
-				</div>
+				</div></a>
 
-				<div class="button" id="gestion_btn">
-
+				<a href="{% url 'registro-list' %}"><div class="button" id="gestion_btn">
 					<img src="{% static "images/loupe.png"%}" class="icon">
 					<p class="texto">Gestion</p>
-				</div>
-                <div class="button" id="add2_btn" >
-
+				</div></a>
+                
+                <a href="{% url 'registro-new' %}"><div class="button" id="add2_btn" >
 					<img src="{% static "images/edit.png" %}"  class="icon">
 					<p class="texto">Añadir</p>
-				</div>
+				</div></a>
 			</div>
 		</section>
         {%endblock%}

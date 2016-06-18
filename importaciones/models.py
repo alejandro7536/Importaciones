@@ -40,7 +40,7 @@ class Estadistica(models.Model):
 	valor = models.DecimalField(max_digits = 30, decimal_places = 2)
 	cantidad = models.DecimalField(max_digits = 30, decimal_places = 2)
 	mes = models.CharField(max_length = 2, choices = MES_CHOICES, default = "01")
-	anho = models.PositiveSmallIntegerField()
+	anho = models.CharField(max_length = 4)
 	def __unicode__(self):
 		return self.producto.nombre_producto
 

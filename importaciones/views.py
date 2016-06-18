@@ -12,3 +12,5 @@ def gestion(request):
 
 def archivocsv(request):
 	return render(request, 'archivocsv.html')
+
+

@@ -2,6 +2,8 @@ from django import forms
 from django.core.exceptions import ValidationError
 from importaciones.models import Estadistica
 from importaciones.models import Producto
+from importaciones.models import Categoria
+import csv
 
 class RegistroForm(forms.ModelForm):
 	MES_CHOICES = (
@@ -19,9 +21,7 @@ class RegistroForm(forms.ModelForm):
 		("12", "Diciembre")
 	)
 	
-
-
-
+	# Sin resolver: Como enviar los productos de la base de datos a este ChoiceField?
 	producto = forms.ChoiceField(required = True, label = "Producto:")
 	valor = forms.DecimalField(max_digits = 30, decimal_places = 2, label = "Valor: $")
 	cantidad = forms.DecimalField(max_digits = 30, decimal_places = 2, label = "Cantidad: Kg")
@@ -51,3 +51,16 @@ class RegistroForm(forms.ModelForm):
 				raise forms.ValidationError("Error: Solo puede digitar numeros.")
 			return anho
 			
+class CategoriaImport(forms.ModelForm):
+	archivo_a_importar = forms.FileField()
+
+	class Meta:
+		model = Categoria
+		fields = ('nombre_categoria',)
+	def save(self, commit=False, *args, **kwargs):
+		form_ingreso = super(CategoriaImport,self).save(commit=False,*args,**kwargs)
+		self.archivo_a_importar = self.cleaned_data['archivo_a_importar']
+		registros = csv.reader(self.archivo_a_importar)
+		for linea in registros:
+			self.nombre_categoria = str(linea[2])
+			form_ingreso.save()

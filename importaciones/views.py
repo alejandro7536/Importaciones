@@ -9,3 +9,8 @@ def ingresar(request):
 
 def gestion(request):
     return render(request, 'data.html')
+
+def archivocsv(request):
+	return render(request, 'archivocsv.html')
+
+

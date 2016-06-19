@@ -1,0 +1,50 @@
+{% extends 'Index.html' %}
+{% load staticfiles %}
+{%block descripcion1%}
+            <div id="descripcion">
+            <span> Bienvenido a Import. Aqui podras añadir y gestionar informacion relacionada con las importaciones</span>
+            </div>
+        {%endblock%}
+            
+
+       {%block menu%}
+        <nav >
+            <ul>
+                <a href="/"> <li>Inicio</li></a>
+            </ul>
+        </nav>
+        {%endblock%}
+        
+        {%block contenido%}
+
+        <h3>Administrador de Registros</h3>
+
+        <a href = "{% url 'registro-new' %}"><button>Nuevo</button></a>
+
+        <div class = "table-responsive">
+            <table class = "table table-hover">
+                <tr class = "success">
+                    <th>Producto</th>
+                    <th>Valor</th>
+                    <th>Cantidad</th>
+                    <th>Mes</th>
+                    <th>Anho</th>
+                    <th></th>
+                </tr>
+                {% for registro in object_list %}
+                    <tr>
+                        <td>{{ registro.producto }}</td>
+                        <td>{{ registro.valor }}</td>
+                        <td>{{ registro.cantidad }}</td>
+                        <td>{{ registro.mes }}</td>
+                        <td>{{ registro.anho }}</td>
+                        <td><a href = "{% url 'registro-view' pk=registro.id %}"><button>Detalle</button></a>
+                        <a href = "{% url 'registro-delete' pk=registro.id %}"><button>Eliminar</button></a>
+                        <a href = "{% url 'registro-edit' pk=registro.id %}"><button>Editar</button></a>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </table>
+        </div>
+        
+        {%endblock%}

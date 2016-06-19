@@ -1,0 +1,47 @@
+{% extends 'Index.html' %}
+{% load staticfiles %}
+{%block descripcion1%}
+            <div id="descripcion">
+            <span> Bienvenido a Import. Aqui podras añadir y gestionar informacion relacionada con las importaciones</span>
+            </div>
+        {%endblock%}
+            
+
+       {%block menu%}
+        <nav >
+            <ul>
+                <a href="/"> <li>Inicio</li></a>
+            </ul>
+        </nav>
+        {%endblock%}
+        
+        {%block contenido%}
+
+        {% if registro.id %}
+        <h3>Editar registro</h3>
+        {% else %}
+        <h3>Nuevo registro</h3>
+        {% endif %}
+
+        <hr/>
+        <form action = "{{ action }}" class = "form-horizontal" method = "post">
+
+            {% csrf_token %}
+
+            {% for element in form %}
+                <div class = "form-group">
+                    <label class = "col-md-2 control-label">{{element.label}}</label>
+                    <div class = "col-md-7">
+                        {{element}}
+                        <div class = "error">{{element.errors}}</div>
+                    </div>
+                </div>
+            {% endfor %}
+
+            <div class = "col-md-offset-2 col-md-7">
+                <button id = "save registro" type = "submit" class = "btn btn-default">Guardar</button>
+                <a href = "{% url 'registro-list' %}" class = "btn btn-default">Volver a la lista</a>
+            </div>
+        </form>
+
+        {%endblock%}
